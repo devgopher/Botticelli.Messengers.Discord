@@ -1,0 +1,4 @@
+[submodule "botticelli"]
+	path = botticelli
+	url = https://github.com/devgopher/botticelli.git
+	branch = dev/0.8

@@ -1,0 +1,97 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botticelli.Framework", "botticelli\Botticelli.Framework\Botticelli.Framework.csproj", "{36846120-6B1C-4926-8A02-A0A305CB1898}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{0263DEF3-E739-4402-8262-FB7CAFFB9816}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botticelli.Framework.Commands", "botticelli\Botticelli.Framework.Commands\Botticelli.Framework.Commands.csproj", "{A7F23CA0-93B7-49B2-BF9F-A1C40F7015B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botticelli.Framework.Events", "botticelli\Botticelli.Framework.Common\Botticelli.Framework.Events.csproj", "{5FE07AD2-D71F-48BF-97D4-A3D1B11AF7E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botticelli.Shared", "botticelli\Botticelli.Shared\Botticelli.Shared.csproj", "{8C883BF3-0A9A-4345-8D69-66C4C1B42559}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botticelli.Interfaces", "botticelli\Botticelli.Interfaces\Botticelli.Interfaces.csproj", "{CADDC2B6-D0B1-4FAE-8D49-22A0D7DC1BC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botticelli.Bot.Dal", "botticelli\Botticelli.Bot.Dal\Botticelli.Bot.Dal.csproj", "{C4FC642E-AD65-4541-A4C9-FAE7075FDB95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botticelli.Bot.Data.Entities", "botticelli\Botticelli.Bot.Data.Entities\Botticelli.Bot.Data.Entities.csproj", "{04470903-CADD-4442-8C0F-C06D5C5BA857}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botticelli.Analytics.Shared", "botticelli\Botticelli.Analytics.Shared\Botticelli.Analytics.Shared.csproj", "{AF8094C0-EDD3-4953-82A3-5287D2DEFF37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botticelli.Bot.Utils", "botticelli\Botticelli.Bot.Utils\Botticelli.Bot.Utils.csproj", "{0B66166A-458E-4C5C-A6D8-9241B6FEE6CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botticelli.Bot.Interfaces", "botticelli\Botticelli.Bot.Interfaces\Botticelli.Bot.Interfaces.csproj", "{726B7459-B2ED-4A2C-ADD4-4638600417D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botticelli.Client.Analytics", "botticelli\Botticelli.Client.Analytics\Botticelli.Client.Analytics.csproj", "{A519818E-6F89-4B4F-8CE2-AAD75AB85555}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botticelli.Framework.Telegram", "botticelli\Botticelli.Framework.Telegram\Botticelli.Framework.Telegram.csproj", "{32BC6B80-0243-47F2-B462-E646EAE94436}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botticelli.Controls", "botticelli\Botticelli.Controls\Botticelli.Controls.csproj", "{E85C18C7-F22D-4713-9EEC-BEE1A95E2CF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botticelli.Framework.Vk.Messages", "Botticelli.Framework.Vk\Botticelli.Framework.Vk.Messages.csproj", "{0385E75D-9240-4EC5-876D-8164B52E86E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botticelli.Locations.Vk", "Botticelli.Locations.Vk\Botticelli.Locations.Vk.csproj", "{622D8746-2DFD-4471-9337-8629CB3CADE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Locations", "Locations", "{95A5E7DA-7E31-48F3-9FEB-9AAC18FCBC7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botticelli.Locations", "botticelli\Botticelli.Locations\Botticelli.Locations.csproj", "{EC100823-BA5B-4566-88DB-1B1C6BEF78FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botticelli.Controls.Layouts", "botticelli\Botticelli.Controls.Layouts\Botticelli.Controls.Layouts.csproj", "{F31F179E-7004-4156-AF7B-3D90271FEB2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Botticelli.Audio", "botticelli\Botticelli.Audio\Botticelli.Audio.csproj", "{2C522189-9676-4663-A04C-69983AAE153C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSignatures", "botticelli\3dParty\FileSignatures\FileSignatures.csproj", "{25F4EF28-A608-49D7-A028-D0479059CA91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0385E75D-9240-4EC5-876D-8164B52E86E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0385E75D-9240-4EC5-876D-8164B52E86E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0385E75D-9240-4EC5-876D-8164B52E86E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0385E75D-9240-4EC5-876D-8164B52E86E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{622D8746-2DFD-4471-9337-8629CB3CADE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{622D8746-2DFD-4471-9337-8629CB3CADE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{622D8746-2DFD-4471-9337-8629CB3CADE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{622D8746-2DFD-4471-9337-8629CB3CADE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC100823-BA5B-4566-88DB-1B1C6BEF78FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC100823-BA5B-4566-88DB-1B1C6BEF78FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC100823-BA5B-4566-88DB-1B1C6BEF78FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC100823-BA5B-4566-88DB-1B1C6BEF78FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F31F179E-7004-4156-AF7B-3D90271FEB2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F31F179E-7004-4156-AF7B-3D90271FEB2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F31F179E-7004-4156-AF7B-3D90271FEB2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F31F179E-7004-4156-AF7B-3D90271FEB2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C522189-9676-4663-A04C-69983AAE153C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C522189-9676-4663-A04C-69983AAE153C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C522189-9676-4663-A04C-69983AAE153C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C522189-9676-4663-A04C-69983AAE153C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25F4EF28-A608-49D7-A028-D0479059CA91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25F4EF28-A608-49D7-A028-D0479059CA91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25F4EF28-A608-49D7-A028-D0479059CA91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25F4EF28-A608-49D7-A028-D0479059CA91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{622D8746-2DFD-4471-9337-8629CB3CADE1} = {95A5E7DA-7E31-48F3-9FEB-9AAC18FCBC7D}
+		{AF8094C0-EDD3-4953-82A3-5287D2DEFF37} = {0263DEF3-E739-4402-8262-FB7CAFFB9816}
+		{C4FC642E-AD65-4541-A4C9-FAE7075FDB95} = {0263DEF3-E739-4402-8262-FB7CAFFB9816}
+		{04470903-CADD-4442-8C0F-C06D5C5BA857} = {0263DEF3-E739-4402-8262-FB7CAFFB9816}
+		{726B7459-B2ED-4A2C-ADD4-4638600417D0} = {0263DEF3-E739-4402-8262-FB7CAFFB9816}
+		{0B66166A-458E-4C5C-A6D8-9241B6FEE6CA} = {0263DEF3-E739-4402-8262-FB7CAFFB9816}
+		{A519818E-6F89-4B4F-8CE2-AAD75AB85555} = {0263DEF3-E739-4402-8262-FB7CAFFB9816}
+		{E85C18C7-F22D-4713-9EEC-BEE1A95E2CF3} = {0263DEF3-E739-4402-8262-FB7CAFFB9816}
+		{36846120-6B1C-4926-8A02-A0A305CB1898} = {0263DEF3-E739-4402-8262-FB7CAFFB9816}
+		{A7F23CA0-93B7-49B2-BF9F-A1C40F7015B0} = {0263DEF3-E739-4402-8262-FB7CAFFB9816}
+		{5FE07AD2-D71F-48BF-97D4-A3D1B11AF7E8} = {0263DEF3-E739-4402-8262-FB7CAFFB9816}
+		{32BC6B80-0243-47F2-B462-E646EAE94436} = {0263DEF3-E739-4402-8262-FB7CAFFB9816}
+		{CADDC2B6-D0B1-4FAE-8D49-22A0D7DC1BC0} = {0263DEF3-E739-4402-8262-FB7CAFFB9816}
+		{8C883BF3-0A9A-4345-8D69-66C4C1B42559} = {0263DEF3-E739-4402-8262-FB7CAFFB9816}
+		{EC100823-BA5B-4566-88DB-1B1C6BEF78FA} = {0263DEF3-E739-4402-8262-FB7CAFFB9816}
+		{F31F179E-7004-4156-AF7B-3D90271FEB2B} = {0263DEF3-E739-4402-8262-FB7CAFFB9816}
+		{2C522189-9676-4663-A04C-69983AAE153C} = {0263DEF3-E739-4402-8262-FB7CAFFB9816}
+		{25F4EF28-A608-49D7-A028-D0479059CA91} = {0263DEF3-E739-4402-8262-FB7CAFFB9816}
+	EndGlobalSection
+EndGlobal
