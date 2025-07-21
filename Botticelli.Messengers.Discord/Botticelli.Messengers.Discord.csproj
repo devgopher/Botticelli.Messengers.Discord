@@ -6,4 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\botticelli\Botticelli.Controls\Botticelli.Controls.csproj" />
+      <ProjectReference Include="..\botticelli\Botticelli.Framework\Botticelli.Framework.csproj" />
+    </ItemGroup>
+
 </Project>
