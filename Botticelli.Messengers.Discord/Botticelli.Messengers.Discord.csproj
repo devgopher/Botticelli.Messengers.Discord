@@ -11,4 +11,8 @@
       <ProjectReference Include="..\botticelli\Botticelli.Framework\Botticelli.Framework.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Discord.Net.Core" Version="3.18.0" />
+    </ItemGroup>
+
 </Project>
