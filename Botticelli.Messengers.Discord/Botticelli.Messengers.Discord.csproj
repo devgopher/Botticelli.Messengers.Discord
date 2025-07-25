@@ -7,12 +7,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\botticelli\Botticelli.Controls\Botticelli.Controls.csproj" />
-      <ProjectReference Include="..\botticelli\Botticelli.Framework\Botticelli.Framework.csproj" />
+        <ProjectReference Include="..\botticelli\Botticelli.Controls\Botticelli.Controls.csproj"/>
+        <ProjectReference Include="..\botticelli\Botticelli.Framework\Botticelli.Framework.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Discord.Net.Core" Version="3.18.0" />
+        <PackageReference Include="Discord.Net.Core" Version="3.18.0"/>
+        <PackageReference Include="Discord.Net.WebSocket" Version="3.18.0"/>
     </ItemGroup>
 
 </Project>

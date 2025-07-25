@@ -1,11 +1,9 @@
 ﻿using System.Configuration;
 using Botticelli.Bot.Data.Settings;
 using Botticelli.Client.Analytics.Settings;
-using Botticelli.Controls.Parsers;
 using Botticelli.Framework.Options;
 using Botticelli.Interfaces;
 using Botticelli.Messengers.Discord.Builders;
-using Botticelli.Messengers.Discord.Layout;
 using Botticelli.Messengers.Discord.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,7 +20,7 @@ public static class ServiceCollectionExtensions
 
     private static readonly DataAccessSettingsBuilder<DataAccessSettings> DataAccessSettingsBuilder = new();
 
-    public static IServiceCollection AddVkBot(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddDiscordBot(this IServiceCollection services, IConfiguration configuration)
     {
         var vkBotSettings = configuration
                             .GetSection(DiscordBotSettings.Section)
@@ -43,28 +41,27 @@ public static class ServiceCollectionExtensions
                                  .GetSection(DataAccessSettings.Section)
                                  .Get<DataAccessSettings>() ??
                                  throw new ConfigurationErrorsException($"Can't load configuration for {nameof(DataAccessSettings)}!");
-        ;
 
-        return services.AddVkBot(vkBotSettings,
+        return services.AddDiscordBot(vkBotSettings,
                                  analyticsClientSettings,
                                  serverSettings,
                                  dataAccessSettings);
     }
 
-    public static IServiceCollection AddVkBot(this IServiceCollection services,
+    public static IServiceCollection AddDiscordBot(this IServiceCollection services,
                                               DiscordBotSettings botSettings,
                                               AnalyticsClientSettings analyticsClientSettings,
                                               ServerSettings serverSettings,
                                               DataAccessSettings dataAccessSettings)
     {
-        return services.AddVkBot(o => o.Set(botSettings),
+        return services.AddDiscordBot(o => o.Set(botSettings),
                                  o => o.Set(analyticsClientSettings),
                                  o => o.Set(serverSettings),
                                  o => o.Set(dataAccessSettings));
     }
 
     /// <summary>
-    ///     Adds a Vk bot
+    ///     Adds a Discord bot
     /// </summary>
     /// <param name="services"></param>
     /// <param name="optionsBuilderFunc"></param>
@@ -72,7 +69,7 @@ public static class ServiceCollectionExtensions
     /// <param name="serverSettingsBuilderFunc"></param>
     /// <param name="dataAccessSettingsBuilderFunc"></param>
     /// <returns></returns>
-    public static IServiceCollection AddVkBot(this IServiceCollection services,
+    public static IServiceCollection AddDiscordBot(this IServiceCollection services,
                                               Action<BotSettingsBuilder<DiscordBotSettings>> optionsBuilderFunc,
                                               Action<AnalyticsClientSettingsBuilder<AnalyticsClientSettings>> analyticsOptionsBuilderFunc,
                                               Action<ServerSettingsBuilder<ServerSettings>> serverSettingsBuilderFunc,
@@ -83,7 +80,7 @@ public static class ServiceCollectionExtensions
         analyticsOptionsBuilderFunc(AnalyticsClientOptionsBuilder);
         dataAccessSettingsBuilderFunc(DataAccessSettingsBuilder);
 
-        var clientBuilder = LongPollMessagesProviderBuilder.Instance(SettingsBuilder);
+        var clientBuilder = new DiscordSocketClientBuilder();
 
         var botBuilder = DiscordBotBuilder.Instance(services,
                                                ServerSettingsBuilder,
@@ -96,12 +93,4 @@ public static class ServiceCollectionExtensions
         return services.AddSingleton<IBot<DiscordBot>>(bot)
                        .AddSingleton<IBot>(bot);
     }
-
-    // public static IServiceCollection AddDiscordLayoutsSupport(this IServiceCollection services)
-    // {
-    //     return services.AddSingleton<ILayoutParser, JsonLayoutParser>()
-    //                    .AddSingleton<ILayoutSupplier<DiscordKeyboardMarkup>, DiscordLayoutSupplier>()
-    //                    .AddSingleton<ILayoutLoader<DicsordKeyboardMarkup>,
-    //                            LayoutLoader<ILayoutParser, ILayoutSupplier<DiscordKeyboardMarkup>, DiscordKeyboardMarkup>>();
-    // }
 }
