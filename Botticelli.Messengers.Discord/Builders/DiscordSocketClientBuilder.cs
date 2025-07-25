@@ -1,3 +1,4 @@
+using Botticelli.Messengers.Discord.Options;
 using Discord.WebSocket;
 
 /// <summary>
@@ -5,15 +6,7 @@ using Discord.WebSocket;
 /// </summary>
 public class DiscordSocketClientBuilder
 {
-    private readonly DiscordSocketConfig _config;
-
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="DiscordSocketClientBuilder"/> class.
-    /// </summary>
-    public DiscordSocketClientBuilder()
-    {
-        _config = new DiscordSocketConfig();
-    }
+    private readonly DiscordSocketConfig _config = new();
 
     /// <summary>
     ///     Sets the total number of shards for the client.
@@ -91,6 +84,19 @@ public class DiscordSocketClientBuilder
         _config.SuppressUnknownDispatchWarnings = value;
         return this;
     }
+    
+    /// <summary>
+    ///     Specifies whether to suppress unknown dispatch warnings.
+    /// </summary>
+    /// <param name="value">True to suppress warnings; otherwise, false.</param>
+    /// <returns>The current instance of the builder.</returns>
+    public DiscordSocketClientBuilder With(Action<DiscordSocketConfig> action)
+    {
+        action(_config);
+        
+        return this;
+    }
+
 
     /// <summary>
     ///     Builds and returns a new instance of <see cref="DiscordSocketClient"/> with the configured settings.
