@@ -3,7 +3,6 @@ using Botticelli.Client.Analytics;
 using Botticelli.Framework;
 using Botticelli.Framework.Global;
 using Botticelli.Interfaces;
-using Botticelli.Messengers.Discord.Handlers;
 using Botticelli.Shared.API;
 using Botticelli.Shared.API.Admin.Requests;
 using Botticelli.Shared.API.Admin.Responses;
@@ -19,30 +18,61 @@ namespace Botticelli.Messengers.Discord;
 
 public class DiscordBot : BaseBot<DiscordBot>
 {
-    private readonly DiscordSocketClient? _client;
+    private readonly DiscordSocketClient _client;
     private readonly IBotDataAccess _data;
     private bool _eventsAttached;
 
-    public DiscordBot(DiscordSocketClient? client,
+    public DiscordBot(DiscordSocketClient client,
         IBotDataAccess data,
         MetricsProcessor metrics,
         ILogger<DiscordBot> logger) : base(logger, metrics)
     {
         _data = data;
         _client = client;
+
+        _client.MessageReceived += HandleMessageAsync;
+
+        _client.MessageDeleted += HandleDeletedAsync; 
+
+        _client.MessageUpdated += HandleUpdatedAsync;
+
+        _client.MessageCommandExecuted += HandleCommandAsync;
     }
 
     public override BotType Type => BotType.Vk;
 
 
+    private Task HandleMessageAsync(SocketMessage message)
+    {
+        return Task.CompletedTask;
+        // Method intentionally left empty.
+    }
+
+    private Task HandleCommandAsync(SocketMessageCommand message)
+    {
+        return Task.CompletedTask;
+        // Method intentionally left empty.
+    }
+
+    private Task HandleDeletedAsync(Cacheable<IMessage, ulong> c1, Cacheable<IMessageChannel, ulong> input)
+    {
+        return Task.CompletedTask;
+        // Method intentionally left empty.
+    }
+
+    private Task HandleUpdatedAsync(Cacheable<IMessage, ulong> c1, SocketMessage message,
+        ISocketMessageChannel channel)
+    {
+        return Task.CompletedTask;
+        // Method intentionally left empty.
+    }
+    
     protected override async Task<StopBotResponse> InnerStopBotAsync(StopBotRequest request, CancellationToken token)
     {
         try
         {
             await _client.StopAsync();
-            // var context = new SocketCommandContext(_client, msg);
-            //
-            // context.Channel.SendMessageAsync(new )
+            
             return StopBotResponse.GetInstance(request.Uid, string.Empty, AdminCommandStatus.Ok);
         }
         catch (Exception ex)
@@ -53,14 +83,14 @@ public class DiscordBot : BaseBot<DiscordBot>
         return StopBotResponse.GetInstance(request.Uid, "Error stopping a bot", AdminCommandStatus.Fail);
     }
 
-    protected override async Task<SendMessageResponse> InnerSendMessageAsync<TSendOptions>(SendMessageRequest request,
+    protected override Task<SendMessageResponse> InnerSendMessageAsync<TSendOptions>(SendMessageRequest request,
         ISendOptionsBuilder<TSendOptions>? optionsBuilder, bool isUpdate,
         CancellationToken token)
     {
         throw new NotImplementedException();
     }
 
-    protected override async Task<RemoveMessageResponse> InnerDeleteMessageAsync(DeleteMessageRequest request,
+    protected override Task<RemoveMessageResponse> InnerDeleteMessageAsync(DeleteMessageRequest request,
         CancellationToken token)
     {
         throw new NotImplementedException();
@@ -108,8 +138,7 @@ public class DiscordBot : BaseBot<DiscordBot>
     }
 
 
-    public event MsgSentEventHandler MessageSent;
-    public event MsgReceivedEventHandler MessageReceived;
-    public event MsgRemovedEventHandler MessageRemoved;
-    public event MessengerSpecificEventHandler MessengerSpecificEvent;
+    public override event MsgSentEventHandler? MessageSent;
+    public override event MsgReceivedEventHandler? MessageReceived;
+    public override event MsgRemovedEventHandler? MessageRemoved;
 }
